@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Banner from "../components/Home/Banner";
 import { Box } from "@chakra-ui/react";
+import AdBoard from "../components/Home/AdBoard";
 
 export default function Home() {
     return (
@@ -10,7 +11,7 @@ export default function Home() {
             </Helmet>
 
             <Banner />
-            <Box h="200vh"></Box>
+            <AdBoard />
         </>
     );
 }
