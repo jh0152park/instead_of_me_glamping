@@ -1,3 +1,13 @@
+import { Center } from "@chakra-ui/react";
+
 export default function NotFound() {
-    return <h1>Not Found</h1>;
+    const image = require("../resource/404image.jpg");
+    return (
+        <Center
+            w="100%"
+            h="100vh"
+            bgImage={image}
+            bgPosition="center center"
+        ></Center>
+    );
 }
