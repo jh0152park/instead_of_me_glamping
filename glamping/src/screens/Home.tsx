@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import Banner from "../components/Home/Banner";
 
 export default function Home() {
     return (
@@ -6,7 +7,8 @@ export default function Home() {
             <Helmet>
                 <title>Instead of me 글램핑</title>
             </Helmet>
-            <h1>HOME</h1>
+
+            <Banner />
         </>
     );
 }
