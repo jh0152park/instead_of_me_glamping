@@ -1,11 +1,14 @@
 import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 
 export default function AdBoard() {
+    const pool = require("../../resource/pool.jpg");
     const image = require("../../resource/village.jpg");
+    const toilet = require("../../resource/toilet.jpg");
+    const kitchen = require("../../resource/kitchen.jpg");
     const SCREEN_WIDTH = window.document.documentElement.clientWidth;
 
     return (
-        <Center w="100%" h="100vh">
+        <Center w="100%" minH="100vh">
             <VStack>
                 <Center
                     w={`${SCREEN_WIDTH * 0.7}px`}
