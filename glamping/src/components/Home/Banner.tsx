@@ -3,9 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const Image = styled(motion.img)`
+const Image = styled(motion.img)<{ height: number }>`
     width: 100%;
-    height: 100%;
+    height: ${(props) => props.height}px;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -31,6 +31,8 @@ const ImageVariants = {
 
 export default function Banner() {
     const [imageIndex, setImageIndex] = useState(0);
+    const SCREEN_HEIGHT = window.document.documentElement.clientHeight;
+
     const images = [
         require("../../resource/night_village.jpg"),
         require("../../resource/dog.jpg"),
@@ -48,13 +50,14 @@ export default function Banner() {
     }, [imageIndex]);
 
     return (
-        <Center w="100%" h="100vh">
+        <Center w="100%" h={`${SCREEN_HEIGHT}px`}>
             <AnimatePresence initial={false}>
                 {images.map((image, index) =>
                     index === imageIndex ? (
                         <Image
                             key={index}
                             src={image}
+                            height={SCREEN_HEIGHT}
                             variants={ImageVariants}
                             initial="initial"
                             animate="visible"
