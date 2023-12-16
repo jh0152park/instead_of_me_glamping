@@ -70,7 +70,7 @@ export default function Banner() {
                 )}
             </AnimatePresence>
 
-            <VStack zIndex={99} color={"whitesmoke"} spacing={0}>
+            <VStack zIndex={98} color={"whitesmoke"} spacing={0}>
                 <Heading
                     fontSize="50px"
                     textShadow="-3px 0px black, 0px 3px black, 3px 0px black, 0px -3px black"
