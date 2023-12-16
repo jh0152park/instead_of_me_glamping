@@ -1,14 +1,33 @@
 import { Center, Heading, Text, VStack } from "@chakra-ui/react";
+import Badge from "./Badge";
 
 export default function AdBoard() {
-    const pool = require("../../resource/pool.jpg");
     const image = require("../../resource/village.jpg");
-    const toilet = require("../../resource/toilet.jpg");
-    const kitchen = require("../../resource/kitchen.jpg");
     const SCREEN_WIDTH = window.document.documentElement.clientWidth;
 
+    const datas = [
+        {
+            title: "깨끗한 개별 화장실",
+            description:
+                "안심하고 사용하실 수 있는 청결에 신경쓰고 있는 개별 화장실 입니다.",
+            image: require("../../resource/toilet.jpg"),
+        },
+        {
+            title: "야외수영장",
+            description:
+                "무더운 여름 귀여운 아이들과 함께 안전하게 물놀이를 즐길수 있습니다.",
+            image: require("../../resource/pool.jpg"),
+        },
+        {
+            title: "청결한 주방식기",
+            description:
+                "청결한 주방식기로 안심하고 식사를 즐기실 수 있습니다.",
+            image: require("../../resource/kitchen.jpg"),
+        },
+    ];
+
     return (
-        <Center w="100%" minH="100vh">
+        <Center w="100%" minH="100vh" pt="200px">
             <VStack>
                 <Center
                     w={`${SCREEN_WIDTH * 0.7}px`}
@@ -25,6 +44,18 @@ export default function AdBoard() {
                 <Text>
                     Instead of me 글램핑, 수 많은 별들을 눈에 담아가는 공간
                 </Text>
+
+                <Center my="100px">
+                    {datas.map((data, index) => (
+                        <Badge
+                            key={index}
+                            image={data.image}
+                            title={data.title}
+                            description={data.description}
+                            screenWidth={SCREEN_WIDTH * 0.7 * 0.3}
+                        />
+                    ))}
+                </Center>
             </VStack>
         </Center>
     );
