@@ -1,4 +1,4 @@
-import { Center } from "@chakra-ui/react";
+import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -66,6 +66,21 @@ export default function Banner() {
                     ) : null
                 )}
             </AnimatePresence>
+
+            <VStack zIndex={99} color={"whitesmoke"} spacing={0}>
+                <Heading
+                    fontSize="50px"
+                    textShadow="-3px 0px black, 0px 3px black, 3px 0px black, 0px -3px black"
+                >
+                    Welcome to the Instead of glamping
+                </Heading>
+                <Text
+                    fontWeight="bold"
+                    textShadow="-1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black"
+                >
+                    우리 글램핑장에 오신 것을 환영합니다
+                </Text>
+            </VStack>
         </Center>
     );
 }
