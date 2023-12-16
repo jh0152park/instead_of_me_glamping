@@ -3,6 +3,7 @@ import Banner from "../components/Home/Banner";
 import { Box } from "@chakra-ui/react";
 import AdBoard from "../components/Home/AdBoard";
 import SplitBanner from "../components/Home/SplitBanner";
+import Preview from "../components/Home/Preview";
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             <Banner />
             <AdBoard />
             <SplitBanner />
+            <Preview />
         </>
     );
 }
