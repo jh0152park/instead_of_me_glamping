@@ -1,4 +1,6 @@
 import { Box, Center, Grid, Heading, Image } from "@chakra-ui/react";
+import SplitItem from "./SplitItem";
+import { title } from "process";
 
 export default function SplitBanner() {
     const datas = [
@@ -30,37 +32,11 @@ export default function SplitBanner() {
         >
             <Grid templateColumns="repeat(4, 1fr)" h="100%">
                 {datas.map((data, index) => (
-                    <Center
-                        h="100%"
+                    <SplitItem
                         key={index}
-                        overflow="hidden"
-                        boxSizing="border-box"
-                    >
-                        <Box
-                            w="100%"
-                            h="100%"
-                            bgImage={data.image}
-                            bgSize={"cover"}
-                            bgPosition={"center center"}
-                            _hover={{
-                                cursor: "pointer",
-                                transform: ["scale(1.05)"],
-                            }}
-                            transition="all 0.2s linear"
-                        >
-                            <Center
-                                w="100%"
-                                h="100%"
-                                _hover={{
-                                    bgColor: "rgba(0, 0, 0, 0.5)",
-                                }}
-                            >
-                                <Heading color="whitesmoke" fontSize="30px">
-                                    {data.title}
-                                </Heading>
-                            </Center>
-                        </Box>
-                    </Center>
+                        image={data.image}
+                        title={data.title}
+                    />
                 ))}
             </Grid>
         </Box>

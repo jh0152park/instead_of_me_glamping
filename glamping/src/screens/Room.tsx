@@ -12,7 +12,7 @@ export default function Room() {
             </Helmet>
 
             <VStack w="100%" minH="100vh" mb="100px">
-                <TopBanner title="객실안내" />
+                <TopBanner title="ROOM" subtitle="객실안내" />
                 <Grid mt="100px" templateColumns="repeat(3, 1fr)" gap="20px">
                     {datas.map((data, index) => (
                         <Product

@@ -24,7 +24,7 @@ export default function RoomDetail() {
 
     return (
         <VStack w="100%" minH="100vh">
-            <TopBanner title={room?.name as string} />
+            <TopBanner title={room?.name as string} subtitle="객실안내" />
 
             <Center px={`${SCREEN_WIDTH * 0.1}px`} my="200px">
                 <VStack alignItems="flex-start">
