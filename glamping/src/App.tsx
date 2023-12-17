@@ -20,7 +20,7 @@ const route = createBrowserRouter([
                 element: <Room />,
             },
             {
-                path: "/room/:roomName",
+                path: "/room/:roomId",
                 element: <RoomDetail />,
             },
         ],
