@@ -12,11 +12,11 @@ export const datas: IData[] = [
     {
         id: "rooma",
         name: "Room A",
-        description: "기준2인, 최대3인",
+        description: "기준2인, 최대2인",
         image: require("../../resource/inside.jpg"),
         area: 11,
         minimum: 2,
-        maximum: 3,
+        maximum: 2,
     },
     {
         id: "roomb",
