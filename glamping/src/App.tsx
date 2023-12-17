@@ -3,6 +3,7 @@ import Home from "./screens/Home";
 import Layout from "./screens/Layout";
 import NotFound from "./screens/NotFound";
 import Room from "./screens/Room";
+import RoomDetail from "./screens/RoomDetail";
 
 const route = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const route = createBrowserRouter([
             {
                 path: "/room",
                 element: <Room />,
+            },
+            {
+                path: "/room/:roomName",
+                element: <RoomDetail />,
             },
         ],
     },

@@ -1,4 +1,5 @@
 import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface IProps {
     image: string;
@@ -9,8 +10,14 @@ interface IProps {
 const SCREEN_WIDTH = window.document.documentElement.clientWidth;
 
 export default function Product({ image, name, description }: IProps) {
+    const { pathname } = useLocation();
+    const navigation = useNavigate();
     const width = SCREEN_WIDTH * 0.2;
     const height = SCREEN_WIDTH * 0.25;
+
+    function onRoomClick() {
+        navigation(`${pathname}/${name.replace(" ", "").toLocaleLowerCase()}`);
+    }
 
     return (
         <VStack
@@ -21,6 +28,7 @@ export default function Product({ image, name, description }: IProps) {
             _hover={{
                 cursor: "pointer",
             }}
+            onClick={onRoomClick}
         >
             <Box boxSizing="border-box" overflow="hidden">
                 <Image
