@@ -1,5 +1,6 @@
 import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { go_to_top } from "../../utils";
 
 interface IProps {
     image: string;
@@ -16,6 +17,7 @@ export default function Product({ image, name, description }: IProps) {
     const height = SCREEN_WIDTH * 0.25;
 
     function onRoomClick() {
+        go_to_top(0);
         navigation(`${pathname}/${name.replace(" ", "").toLocaleLowerCase()}`);
     }
 
