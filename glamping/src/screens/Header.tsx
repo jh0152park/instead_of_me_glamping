@@ -1,17 +1,48 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import { go_to_top } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
     const { scrollY } = useScroll();
+    const navigation = useNavigate();
     const [fillBG, setFillBG] = useState(false);
-    const menus = [
+
+    type TMenus =
+        | "HOME"
+        | "ROOM"
+        | "SPECIAL"
+        | "SIGHT SEEING"
+        | "RESERVATION"
+        | "USER GUIDE";
+
+    const menus: TMenus[] = [
+        "HOME",
         "ROOM",
         "SPECIAL",
         "SIGHT SEEING",
         "RESERVATION",
         "USER GUIDE",
     ];
+
+    interface IPath {
+        HOME: string;
+        ROOM: string;
+        SPECIAL: string;
+        "SIGHT SEEING": string;
+        RESERVATION: string;
+        "USER GUIDE": string;
+    }
+
+    const paths: IPath = {
+        HOME: "/",
+        ROOM: "/room",
+        SPECIAL: "/special",
+        "SIGHT SEEING": "/sight",
+        RESERVATION: "/reservation",
+        "USER GUIDE": "/userguide",
+    };
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         if (latest > 100) {
@@ -20,6 +51,13 @@ export default function Header() {
             setFillBG(false);
         }
     });
+
+    function onMenuClick(menu: TMenus) {
+        if (menus.includes(menu)) {
+            go_to_top(0);
+            navigation(paths[menu]);
+        }
+    }
 
     return (
         <Box
@@ -48,6 +86,7 @@ export default function Header() {
                                 : "rgba(255, 255, 255, 0.4)",
                         }}
                         transition="all 0.2s linear"
+                        onClick={() => onMenuClick(menu)}
                     >
                         {menu}
                     </Text>
