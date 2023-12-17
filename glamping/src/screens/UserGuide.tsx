@@ -9,9 +9,7 @@ export default function UserGuide() {
                 <title>Instead of me 글램핑</title>
             </Helmet>
 
-            <VStack w="100%" minH="100vh">
-                <TopBanner title="고객 이용 사항" subtitle="이용안내" />
-            </VStack>
+            <TopBanner title="고객 이용 사항" subtitle="이용안내" />
         </>
     );
 }

@@ -37,32 +37,30 @@ export default function SightSeeing() {
                 <title>Instead of me 글램핑</title>
             </Helmet>
 
-            <VStack w="100%" minH="100vh">
-                <TopBanner title="Attractions" subtitle="주변 광광지" />
+            <TopBanner title="Attractions" subtitle="주변 광광지" />
 
-                <Box
-                    w="100%"
-                    h="100vh"
-                    mt="200px"
-                    bgColor="whitesmoke"
-                    overflow="hidden"
-                    boxSizing="border-box"
+            <Box
+                w="100%"
+                h="100vh"
+                mt="200px"
+                bgColor="whitesmoke"
+                overflow="hidden"
+                boxSizing="border-box"
+            >
+                <Grid
+                    templateColumns="repeat(3, 1fr)"
+                    templateRows="repeat(2, 1fr)"
+                    h="100%"
                 >
-                    <Grid
-                        templateColumns="repeat(3, 1fr)"
-                        templateRows="repeat(2, 1fr)"
-                        h="100%"
-                    >
-                        {datas.map((data, index) => (
-                            <SplitItem
-                                key={index}
-                                image={data.image}
-                                title={data.title}
-                            />
-                        ))}
-                    </Grid>
-                </Box>
-            </VStack>
+                    {datas.map((data, index) => (
+                        <SplitItem
+                            key={index}
+                            image={data.image}
+                            title={data.title}
+                        />
+                    ))}
+                </Grid>
+            </Box>
         </>
     );
 }
