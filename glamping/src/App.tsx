@@ -7,6 +7,7 @@ import RoomDetail from "./screens/RoomDetail";
 import Special from "./screens/Special";
 import SightSeeing from "./screens/SightSeeing";
 import Reservation from "./screens/Reservation";
+import UserGuide from "./screens/UserGuide";
 
 const route = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const route = createBrowserRouter([
             {
                 path: "/reservation",
                 element: <Reservation />,
+            },
+            {
+                path: "/userguide",
+                element: <UserGuide />,
             },
         ],
     },
