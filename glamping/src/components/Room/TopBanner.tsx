@@ -1,6 +1,12 @@
 import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 
-export default function TopBanner({ title }: { title: String }) {
+export default function TopBanner({
+    title,
+    subtitle,
+}: {
+    title: string;
+    subtitle: string;
+}) {
     const topImage = require("../../resource/landscape5.jpg");
 
     return (
@@ -13,7 +19,7 @@ export default function TopBanner({ title }: { title: String }) {
         >
             <VStack>
                 <Heading>{title}</Heading>
-                <Text fontWeight="bold">객실안내</Text>
+                <Text fontWeight="bold">{subtitle}</Text>
             </VStack>
         </Center>
     );
