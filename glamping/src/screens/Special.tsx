@@ -29,28 +29,26 @@ export default function Special() {
                 <title>Instead of me 글램핑</title>
             </Helmet>
 
-            <VStack w="100%" minH="100vh">
-                <TopBanner title="SPECIAL" subtitle="이곳만의 특별함" />
+            <TopBanner title="SPECIAL" subtitle="이곳만의 특별함" />
 
-                <Box
-                    w="100%"
-                    h="100vh"
-                    mt="200px"
-                    bgColor="whitesmoke"
-                    overflow="hidden"
-                    boxSizing="border-box"
-                >
-                    <Grid templateColumns="repeat(4, 1fr)" h="100%">
-                        {datas.map((data, index) => (
-                            <SplitItem
-                                key={index}
-                                image={data.image}
-                                title={data.title}
-                            />
-                        ))}
-                    </Grid>
-                </Box>
-            </VStack>
+            <Box
+                w="100%"
+                h="100vh"
+                mt="200px"
+                bgColor="whitesmoke"
+                overflow="hidden"
+                boxSizing="border-box"
+            >
+                <Grid templateColumns="repeat(4, 1fr)" h="100%">
+                    {datas.map((data, index) => (
+                        <SplitItem
+                            key={index}
+                            image={data.image}
+                            title={data.title}
+                        />
+                    ))}
+                </Grid>
+            </Box>
         </>
     );
 }
