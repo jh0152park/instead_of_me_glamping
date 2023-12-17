@@ -1,11 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { datas } from "../components/Room/RoomData";
+import { IData, datas } from "../components/Room/RoomData";
 import {
     Center,
     Grid,
     GridItem,
     HStack,
     Heading,
+    Text,
     VStack,
 } from "@chakra-ui/react";
 import TopBanner from "../components/Room/TopBanner";
@@ -39,13 +40,14 @@ export default function RoomDetail() {
                     >
                         뒤로가기
                     </Heading>
-                    <HStack>
+                    <VStack alignItems="flex-start">
                         <Grid
-                            w={`${SCREEN_WIDTH * 0.6}px`}
-                            h={`${SCREEN_WIDTH * 0.6 * 0.5}px`}
+                            w={`${SCREEN_WIDTH * 0.8}px`}
+                            h={`${SCREEN_WIDTH * 0.8 * 0.5}px`}
                             templateRows="repeat(2, 1fr)"
                             templateColumns="repeat(3, 1fr)"
                             gap="10px"
+                            mb="50px"
                         >
                             <GridItem
                                 colSpan={1}
@@ -83,7 +85,26 @@ export default function RoomDetail() {
                                 bgPosition={"center center"}
                             ></GridItem>
                         </Grid>
-                    </HStack>
+
+                        <Text>
+                            구조넓이: {room?.area}평(
+                            {`${((room?.area as number) * 3.3).toFixed(1)}㎡`})
+                        </Text>
+                        <Text>
+                            구비시설: TV, 침대, 에어컨, 난방기구, 냉장고,
+                            취사도구, 전자레인지, 가스레인지, 무선인터넷,
+                            일산화탄소 경보기, 소화기
+                        </Text>
+                        <Text mt="20px">
+                            기준인원: 기준 {room?.minimum}명 ~ 최대{" "}
+                            {room?.maximum}명 / 최대인원 초과시 1명당 추가요금
+                            발생
+                        </Text>
+                        <Text>성인: 20,000원 / 아동: 10,000원 / 유아: 0원</Text>
+                        <Text mt="20px">
+                            특이사항: 객실랜덤배정, 추가요금 전화문의 필수
+                        </Text>
+                    </VStack>
                 </VStack>
             </Center>
         </VStack>
