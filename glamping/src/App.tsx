@@ -5,6 +5,7 @@ import NotFound from "./screens/NotFound";
 import Room from "./screens/Room";
 import RoomDetail from "./screens/RoomDetail";
 import Special from "./screens/Special";
+import SightSeeing from "./screens/SightSeeing";
 
 const route = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const route = createBrowserRouter([
             {
                 path: "/special",
                 element: <Special />,
+            },
+            {
+                path: "/sight",
+                element: <SightSeeing />,
             },
         ],
     },
