@@ -4,6 +4,7 @@ import TopBanner from "../components/Room/TopBanner";
 import SplitItem from "../components/Home/SplitItem";
 import { useRecoilValue } from "recoil";
 import { currentMode } from "../ProjectCommon";
+import SplitItemMobile from "../components/Home/SplitItemMobile";
 
 export default function Special() {
     const datas = [
@@ -48,13 +49,21 @@ export default function Special() {
                     }
                     h="100%"
                 >
-                    {datas.map((data, index) => (
-                        <SplitItem
-                            key={index}
-                            image={data.image}
-                            title={data.title}
-                        />
-                    ))}
+                    {datas.map((data, index) =>
+                        isMobile ? (
+                            <SplitItemMobile
+                                key={index}
+                                image={data.image}
+                                title={data.title}
+                            />
+                        ) : (
+                            <SplitItem
+                                key={index}
+                                image={data.image}
+                                title={data.title}
+                            />
+                        )
+                    )}
                 </Grid>
             </Box>
         </>
