@@ -8,6 +8,7 @@ import { useRecoilValue } from "recoil";
 import { currentMode } from "../ProjectCommon";
 import BannerMobile from "../components/Home/BannerMobile";
 import AdBoardMobile from "../components/Home/AdBoardMobile";
+import SplitBannerMobile from "../components/Home/SplitBannerMobile";
 
 export default function Home() {
     const isMobile = useRecoilValue(currentMode) === "mobile";
@@ -22,7 +23,7 @@ export default function Home() {
                 <>
                     <BannerMobile />
                     <AdBoardMobile />
-                    <SplitBanner />
+                    <SplitBannerMobile />
                     <Preview />
                 </>
             ) : (
