@@ -8,6 +8,9 @@ import Special from "./screens/Special";
 import SightSeeing from "./screens/SightSeeing";
 import Reservation from "./screens/Reservation";
 import UserGuide from "./screens/UserGuide";
+import { useSetRecoilState } from "recoil";
+import { currentMode } from "./ProjectCommon";
+import { useEffect } from "react";
 
 const route = createBrowserRouter([
     {
@@ -48,5 +51,15 @@ const route = createBrowserRouter([
 ]);
 
 export default function App() {
+    const setCurrentMode = useSetRecoilState(currentMode);
+
+    useEffect(() => {
+        if (window.document.documentElement.clientWidth < 500) {
+            setCurrentMode("mobile");
+        } else {
+            setCurrentMode("web");
+        }
+    }, []);
+
     return <RouterProvider router={route} />;
 }
