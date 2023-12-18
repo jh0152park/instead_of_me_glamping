@@ -23,31 +23,31 @@ const route = createHashRouter([
         errorElement: <NotFound />,
         children: [
             {
-                path: "/",
+                path: "",
                 element: <Home />,
             },
             {
-                path: "/room",
+                path: "room",
                 element: <Room />,
             },
             {
-                path: "/room/:roomId",
+                path: "room/:roomId",
                 element: <RoomDetail />,
             },
             {
-                path: "/special",
+                path: "special",
                 element: <Special />,
             },
             {
-                path: "/sight",
+                path: "sight",
                 element: <SightSeeing />,
             },
             {
-                path: "/reservation",
+                path: "reservation",
                 element: <Reservation />,
             },
             {
-                path: "/userguide",
+                path: "userguide",
                 element: <UserGuide />,
             },
         ],
@@ -58,31 +58,31 @@ const route = createHashRouter([
         errorElement: <NotFound />,
         children: [
             {
-                path: "/",
+                path: "",
                 element: <Home />,
             },
             {
-                path: "/room",
+                path: "room",
                 element: <Room />,
             },
             {
-                path: "/room/:roomId",
+                path: "room/:roomId",
                 element: <RoomDetail />,
             },
             {
-                path: "/special",
+                path: "special",
                 element: <Special />,
             },
             {
-                path: "/sight",
+                path: "sight",
                 element: <SightSeeing />,
             },
             {
-                path: "/reservation",
+                path: "reservation",
                 element: <Reservation />,
             },
             {
-                path: "/userguide",
+                path: "userguide",
                 element: <UserGuide />,
             },
         ],
