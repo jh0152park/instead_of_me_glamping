@@ -41,7 +41,7 @@ export default function SightSeeing() {
                 <title>Instead of me 글램핑</title>
             </Helmet>
 
-            <TopBanner title="Attractions" subtitle="주변 광광지" />
+            <TopBanner title="Attractions" subtitle="주변 관광지" />
 
             <Box
                 w="100%"
