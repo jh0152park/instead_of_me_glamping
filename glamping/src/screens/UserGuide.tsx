@@ -161,52 +161,52 @@ export default function UserGuide() {
                                 </Thead>
                                 <Tbody>
                                     <Tr>
-                                        <Td>이용일 당일 취소시</Td>
+                                        <Td>당일 취소시</Td>
                                         <Td>90%</Td>
                                         <Td>10% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 1일 전 취소시</Td>
+                                        <Td>1일 전 취소시</Td>
                                         <Td>80%</Td>
                                         <Td>20% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 2일 전 취소시</Td>
+                                        <Td>2일 전 취소시</Td>
                                         <Td>70%</Td>
                                         <Td>30% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 3일 전 취소시</Td>
+                                        <Td>3일 전 취소시</Td>
                                         <Td>60%</Td>
                                         <Td>40% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 4일 전 취소시</Td>
+                                        <Td>4일 전 취소시</Td>
                                         <Td>50%</Td>
                                         <Td>50% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 5일 전 취소시</Td>
+                                        <Td>5일 전 취소시</Td>
                                         <Td>40%</Td>
                                         <Td>60% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 6일 전 취소시</Td>
+                                        <Td>6일 전 취소시</Td>
                                         <Td>30%</Td>
                                         <Td>70% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 7일 전 취소시</Td>
+                                        <Td>7일 전 취소시</Td>
                                         <Td>20%</Td>
                                         <Td>80% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>이용일 8일 전 취소시</Td>
+                                        <Td>8일 전 취소시</Td>
                                         <Td>0%</Td>
                                         <Td>100% 환불</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td>기본 취소 수수료</Td>
+                                        <Td>기본 수수료</Td>
                                         <Td>0%</Td>
                                         <Td>100% 환불</Td>
                                     </Tr>
