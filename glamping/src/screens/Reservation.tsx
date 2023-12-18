@@ -1,9 +1,12 @@
-import { Box, Center, Heading, VStack } from "@chakra-ui/react";
+import { Box, Center, Heading, Text, VStack } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import TopBanner from "../components/Room/TopBanner";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../ProjectCommon";
 
 export default function Reservation() {
     const bookingUrl = "https://booking.naver.com/";
+    const isMobile = useRecoilValue(currentMode) === "mobile";
 
     return (
         <>
@@ -14,8 +17,11 @@ export default function Reservation() {
             <TopBanner title="Reservation" subtitle="실시간 예약하기" />
             <Center w="100%" h="100%" mt="100px">
                 <Box>
-                    <Heading
+                    <Text
+                        textAlign="center"
                         color="green.300"
+                        fontWeight="bold"
+                        fontSize={isMobile ? "20px" : "40px"}
                         _hover={{
                             color: "green.500",
                             cursor: "pointer",
@@ -27,7 +33,7 @@ export default function Reservation() {
                         }}
                     >
                         네이버를 통해 실시간 예약하러 가기
-                    </Heading>
+                    </Text>
                 </Box>
             </Center>
         </>
