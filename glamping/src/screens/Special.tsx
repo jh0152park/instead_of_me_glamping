@@ -2,6 +2,8 @@ import { Box, Grid, VStack } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import TopBanner from "../components/Room/TopBanner";
 import SplitItem from "../components/Home/SplitItem";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../ProjectCommon";
 
 export default function Special() {
     const datas = [
@@ -22,6 +24,7 @@ export default function Special() {
             image: require("../resource/breakfast.jpg"),
         },
     ];
+    const isMobile = useRecoilValue(currentMode) === "mobile";
 
     return (
         <>
@@ -39,7 +42,12 @@ export default function Special() {
                 overflow="hidden"
                 boxSizing="border-box"
             >
-                <Grid templateColumns="repeat(4, 1fr)" h="100%">
+                <Grid
+                    templateColumns={
+                        isMobile ? "repeat(1, 1fr)" : "repeat(4, 1fr)"
+                    }
+                    h="100%"
+                >
                     {datas.map((data, index) => (
                         <SplitItem
                             key={index}
