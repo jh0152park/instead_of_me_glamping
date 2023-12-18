@@ -52,6 +52,41 @@ const route = createHashRouter([
             },
         ],
     },
+    {
+        path: "/instead_of_me_glamping",
+        element: <Layout />,
+        errorElement: <NotFound />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "/room",
+                element: <Room />,
+            },
+            {
+                path: "/room/:roomId",
+                element: <RoomDetail />,
+            },
+            {
+                path: "/special",
+                element: <Special />,
+            },
+            {
+                path: "/sight",
+                element: <SightSeeing />,
+            },
+            {
+                path: "/reservation",
+                element: <Reservation />,
+            },
+            {
+                path: "/userguide",
+                element: <UserGuide />,
+            },
+        ],
+    },
 ]);
 
 export default function App() {
