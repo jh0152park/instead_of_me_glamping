@@ -2,6 +2,9 @@ import { Box, Grid, VStack } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import TopBanner from "../components/Room/TopBanner";
 import SplitItem from "../components/Home/SplitItem";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../ProjectCommon";
+import SplitItemMobile from "../components/Home/SplitItemMobile";
 
 export default function SightSeeing() {
     const datas = [
@@ -30,6 +33,7 @@ export default function SightSeeing() {
             image: require("../resource/waterfall.jpg"),
         },
     ];
+    const isMobile = useRecoilValue(currentMode) === "mobile";
 
     return (
         <>
@@ -41,24 +45,36 @@ export default function SightSeeing() {
 
             <Box
                 w="100%"
-                h="100vh"
+                h={isMobile ? "200vh" : "100vh"}
                 mt="200px"
                 bgColor="whitesmoke"
                 overflow="hidden"
                 boxSizing="border-box"
             >
                 <Grid
-                    templateColumns="repeat(3, 1fr)"
-                    templateRows="repeat(2, 1fr)"
+                    templateColumns={
+                        isMobile ? "repeat(1, 1fr)" : "repeat(3, 1fr)"
+                    }
+                    templateRows={
+                        isMobile ? "repeat(6, 1fr)" : "repeat(2, 1fr)"
+                    }
                     h="100%"
                 >
-                    {datas.map((data, index) => (
-                        <SplitItem
-                            key={index}
-                            image={data.image}
-                            title={data.title}
-                        />
-                    ))}
+                    {datas.map((data, index) =>
+                        isMobile ? (
+                            <SplitItemMobile
+                                key={index}
+                                image={data.image}
+                                title={data.title}
+                            />
+                        ) : (
+                            <SplitItem
+                                key={index}
+                                image={data.image}
+                                title={data.title}
+                            />
+                        )
+                    )}
                 </Grid>
             </Box>
         </>
