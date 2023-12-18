@@ -3,8 +3,14 @@ import { Helmet } from "react-helmet";
 import TopBanner from "../components/Room/TopBanner";
 import Product from "../components/Room/Product";
 import { datas } from "../components/Room/RoomData";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../ProjectCommon";
+import RoomPreview from "../components/Room/RoomPreview";
+import RoomPreviewMobile from "../components/Room/RoomPreviewMobile";
 
 export default function Room() {
+    const isMobile = useRecoilValue(currentMode) === "mobile";
+
     return (
         <>
             <Helmet>
@@ -13,16 +19,7 @@ export default function Room() {
 
             <TopBanner title="ROOM" subtitle="객실안내" />
             <Center w="100%" minH="100vh" my="100px">
-                <Grid mt="100px" templateColumns="repeat(3, 1fr)" gap="20px">
-                    {datas.map((data, index) => (
-                        <Product
-                            key={index}
-                            name={data.name}
-                            description={data.description}
-                            image={data.image}
-                        />
-                    ))}
-                </Grid>
+                {isMobile ? <RoomPreviewMobile /> : <RoomPreview />}
             </Center>
         </>
     );
