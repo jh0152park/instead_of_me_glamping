@@ -8,6 +8,10 @@ export interface IData {
     maximum: number;
 }
 
+export interface IRoom {
+    room: IData;
+}
+
 export const datas: IData[] = [
     {
         id: "rooma",

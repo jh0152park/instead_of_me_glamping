@@ -12,6 +12,7 @@ import {
 import TopBanner from "../components/Room/TopBanner";
 import DetailRoomImage from "../components/Room/RoomDetailImage";
 import RoomDetailInstruction from "../components/Room/RoomDetailInstruction";
+import RoomDetailInformation from "../components/Room/RoomDetailInformation";
 
 export default function RoomDetail() {
     const roomId = useParams().roomId;
@@ -39,14 +40,14 @@ export default function RoomDetail() {
                     >
                         뒤로가기
                     </Heading>
-                    <VStack alignItems="flex-start">
-                        <DetailRoomImage roomInsde={room?.image as string} />
+
+                    <RoomDetailInformation room={room as IData} />
+                    {/* <DetailRoomImage roomInsde={room?.image as string} />
                         <RoomDetailInstruction
                             area={room?.area as number}
                             maximum={room?.maximum as number}
                             minimum={room?.minimum as number}
-                        />
-                    </VStack>
+                        /> */}
                 </VStack>
             </Center>
         </VStack>
