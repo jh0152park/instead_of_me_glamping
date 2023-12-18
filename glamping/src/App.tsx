@@ -1,4 +1,8 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+    RouterProvider,
+    createBrowserRouter,
+    createHashRouter,
+} from "react-router-dom";
 import Home from "./screens/Home";
 import Layout from "./screens/Layout";
 import NotFound from "./screens/NotFound";
@@ -12,7 +16,7 @@ import { useSetRecoilState } from "recoil";
 import { currentMode } from "./ProjectCommon";
 import { useEffect } from "react";
 
-const route = createBrowserRouter([
+const route = createHashRouter([
     {
         path: "/",
         element: <Layout />,
