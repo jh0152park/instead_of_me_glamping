@@ -11,7 +11,7 @@ export default function RoomDetailImageMobile({
     const fireImage = require("../../resource/fire3.jpg");
 
     const SCREEN_WIDTH = window.document.documentElement.clientWidth;
-    const images = [roomImage, bbqImage, poolImage, roomImage, fireImage];
+    const images = [roomInsde, bbqImage, poolImage, roomImage, fireImage];
 
     return (
         <VStack spacing="50px">
