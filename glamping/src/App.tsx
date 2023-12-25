@@ -15,6 +15,7 @@ import UserGuide from "./screens/UserGuide";
 import { useSetRecoilState } from "recoil";
 import { currentMode } from "./ProjectCommon";
 import { useEffect } from "react";
+import License from "./screens/License";
 
 // for test annotation
 const route = createHashRouter([
@@ -51,6 +52,10 @@ const route = createHashRouter([
                 path: "userguide",
                 element: <UserGuide />,
             },
+            {
+                path: "license",
+                element: <License />,
+            },
         ],
     },
     {
@@ -85,6 +90,10 @@ const route = createHashRouter([
             {
                 path: "userguide",
                 element: <UserGuide />,
+            },
+            {
+                path: "license",
+                element: <License />,
             },
         ],
     },

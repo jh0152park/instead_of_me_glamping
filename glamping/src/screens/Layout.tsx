@@ -3,6 +3,7 @@ import Header from "./Header";
 import { useRecoilValue } from "recoil";
 import { currentMode } from "../ProjectCommon";
 import HeaderMobile from "./HeaderMobile";
+import Footer from "./Footer";
 
 export default function Layout() {
     const isMobile = useRecoilValue(currentMode) === "mobile";
@@ -11,6 +12,7 @@ export default function Layout() {
         <>
             {isMobile ? <HeaderMobile /> : <Header />}
             <Outlet />
+            <Footer />
         </>
     );
 }
